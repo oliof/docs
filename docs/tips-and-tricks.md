@@ -496,7 +496,11 @@ This low load optimisation can reduce gas usage by 15-20% with little change in 
 
 ### Pre-requisites
 
-- A high resolution, high frequency updating thermometer [^thermometers].
+- A high resolution, high frequency updating thermometer. I am using an [MH0-C40IN thermometer](https://pvvx.github.io/MHO_C401N/)
+  with the [pvvx firmware](https://github.com/pvvx/ATC_MiThermometer), as it provides two digits of precision and updates roughly
+  once to twice per minute). Please note that low resolution thermometers with low update frequency will affect your ability to
+  quickly react to temperature changes. If you are so inclined, you can build a high resolution, frequently updating thermometer
+  with tasmota and a DS18B20 or BME820 sensor.
 - Setting up this thermometer as a [Remote Thermostat](https://docs.emsesp.org/Special-Functions/#remote-thermostats).
 - A boiler where setting `Heating Activated` to `off` actually disables heating. This seems to be true for gas boilers, but will most
   likely not work for heatpumps. Make use of the `forceheatingoff` entity in that case.
@@ -607,7 +611,4 @@ deviation is roughly +-0.1K with long periods of the heating system being off (a
 
 [^button]: This is a simple Aqara zigbee button.
 
-[^thermometers]:
-    I am using an [MH0-C40IN thermometer](https://pvvx.github.io/MHO_C401N/) with the [pvvx firmware](https://github.com/pvvx/ATC_MiThermometer), as it provides two digits of precision and updates roughly once to twice per minute).  
-    Please note that low resolution thermometers with low update frequency will affect your ability to quickly react to temperature changes.  
-    If you are so inclined, you can build a high resolution, frequently updating thermometer with tasmota and a DS18B20 or BME820 sensor.
+
